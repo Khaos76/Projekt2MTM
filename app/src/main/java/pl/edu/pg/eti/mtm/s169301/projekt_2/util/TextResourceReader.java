@@ -32,7 +32,7 @@ public class TextResourceReader {
             throw new RuntimeException(
                     "Nie można otwożyć zasobu: " + resourceId, e);
         }catch (Resources.NotFoundException nfe){
-            throw new RuntimeException("Zasób niznaleziony: " + resourceId, nfe);
+            throw new RuntimeException("Zasób nie znaleziony: " + resourceId, nfe);
         }
         return body.toString();
     }

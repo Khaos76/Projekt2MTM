@@ -23,13 +23,11 @@ public class ColorShaderProgram extends ShaderProgram {
         super(context, raw.vertex_shader, raw.fragment_shader);
 
         uMatrixLocation = glGetUniformLocation(program, U_MATRIX);
-
         aPositionLocation = glGetAttribLocation(program, A_POSITION);
         aColorLocation = glGetAttribLocation(program, A_COLOR);
     }
 
     public void setUniforms(float[] matrix) {
-// Pass the matrix into the shader program.
         glUniformMatrix4fv(uMatrixLocation, 1, false, matrix, 0);
     }
     public int getPositionAttributeLocation() {

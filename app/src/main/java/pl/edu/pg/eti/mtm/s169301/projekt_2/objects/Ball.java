@@ -21,13 +21,14 @@ public class Ball {
 
     private static final float[] VERTEX_DATA = {
     // Order of coordinates: X, Y, R, G, B
-            0f, -0.75f, 1f, 0f, 0f};
+            0f, -0.6f, 1f, 0f, 0f};
 
     private final VertexArray vertexArray;
 
     public Ball() {
         vertexArray = new VertexArray(VERTEX_DATA);
     }
+
     public void bindData(ColorShaderProgram colorProgram) {
         vertexArray.setVertexAttribPointer(
                 0,
@@ -40,6 +41,7 @@ public class Ball {
                 COLOR_COMPONENT_COUNT,
                 STRIDE);
     }
+
     public void draw() {
         glDrawArrays(GL_POINTS, 0, 1);
     }
